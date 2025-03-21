@@ -74,3 +74,20 @@ function closePortfolio() {
     document.getElementById("portfolio-viewer").style.display = "none";
     document.getElementById("portfolio-display").src = "";
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+
+    // Vérifie si l'utilisateur a déjà accepté les cookies
+    if (localStorage.getItem("cookiesAccepted")) {
+        banner.style.display = "none";
+    } else {
+        banner.style.display = "flex";
+    }
+
+    // Quand l'utilisateur accepte
+    acceptBtn.addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+});
