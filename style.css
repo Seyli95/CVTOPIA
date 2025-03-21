@@ -1,0 +1,582 @@
+/* --- Réinitialisation des styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #edf2f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1d3557;
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.logo a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.site-title h1 {
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background: #457b9d;
+}
+
+/* --- MENU BURGER --- */
+.burger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1d3557;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+/* --- CONTENU PRINCIPAL --- */
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #1d3557;
+    margin-bottom: 20px;
+}
+
+/* --- FILTRES DU PORTFOLIO --- */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, #e63946, #d62839);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #d62839, #b91d29);
+    transform: scale(1.05);
+}
+
+/* --- STYLE DU PORTFOLIO --- */
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.portfolio-section {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #1d3557;
+    font-weight: bold;
+}
+
+/* --- STYLE DES CARTES MEMBRES --- */
+.portfolio-member {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-member:hover {
+    background: #e63946;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* --- ANIMATIONS --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.portfolio-section {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-section.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+/* --- Conteneur des CV --- */
+.cv-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- Cartes CV --- */
+.cv-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.cv-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cv-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #1d3557;
+}
+
+/* --- Liens Voir / Télécharger --- */
+.cv-view, .cv-download {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.cv-view {
+    background: #457b9d;
+    color: white;
+}
+
+.cv-view:hover {
+    background: #1d3557;
+}
+
+.cv-download {
+    background: #e63946;
+    color: white;
+}
+
+.cv-download:hover {
+    background: #b91d29;
+}
+/* --- FORMULAIRE DE CONTACT --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #1d3557;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.btn-submit {
+    background: #e63946;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background: #d62839;
+    transform: scale(1.05);
+}
+
+/* --- GRILLE DES CONTACTS --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-card {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- BOUTONS EMAIL & APPEL --- */
+.btn-mail, .btn-call {
+    display: block;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-mail {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-mail:hover {
+    background-color: #0056b3;
+}
+
+.btn-call {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-call:hover {
+    background-color: #1e7e34;
+}
+/* --- SECTION "À PROPOS" --- */
+.about-text {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* --- GRILLE DE L'ÉQUIPE --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.team-member {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.team-member h3 {
+    color: #1d3557;
+    font-size: 20px;
+}
+
+.team-member p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* --- BOUTON LINKEDIN --- */
+.btn-linkedin {
+    display: inline-block;
+    background: #0077b5;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-linkedin:hover {
+    background: #005f8d;
+    transform: scale(1.05);
+}
+
+/* Effet hover sur les membres */
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+.cv-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cv-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
+.cv-preview {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cv-preview:hover {
+    transform: scale(1.05);
+}
+
+.cv-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.cv-actions button, .cv-actions a {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.cv-actions button {
+    background-color: #457b9d;
+}
+
+.cv-actions a {
+    background-color: #e63946;
+}
+
+.cv-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-viewer img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+.portfolio-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-viewer iframe {
+    width: 80%;
+    height: 80vh;
+    background: white;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+/* --- Style des cartes de portfolio --- */
+.portfolio-member {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    width: 200px;
+    margin: 10px auto;
+    color: #1d3557;
+    text-decoration: none;
+}
+
+.portfolio-member:hover {
+    background: #e63946;
+    color: white;
+    transform: scale(1.05);
+    
+}
+/* --- MODALE D'AFFICHAGE DU PORTFOLIO --- */
+/* --- MODALE D'AFFICHAGE DU PORTFOLIO --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+}

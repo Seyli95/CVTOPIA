@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos CV - CVTOPIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">🏠</a></div>
+    <div class="site-title"><h1>CVTOPIA</h1></div>
+    <div class="burger-menu" id="burgerMenu">☰</div>
+    <nav class="nav-links" id="navLinks">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À Propos</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Nos CV</h2>
+    <p>Téléchargez ou visualisez nos CV :</p>
+
+    <div class="cv-container">
+        <div class="cv-card">
+            <h3>Ilyes</h3>
+            <img id="cv-ilyes-img" src="CV_Ilyes_DRIDI.pdf (2).pdf (1) (3) (2)-1.png" alt="CV de Ilyes" class="cv-preview">
+            <div class="cv-actions">
+                <button onclick="showCV('cv-ilyes-img')">👀 Voir</button>
+                <a href="CV_Ilyes_DRIDI.pdf (2).pdf (1) (3) (2).pdf" download="Ilyes_CV.pdf">⬇ Télécharger</a>
+            </div>
+        </div>
+
+        <div class="cv-card">
+            <h3>Nathan</h3>
+            <img id="cv-nathan-img" src="BTS CIEL - CV de Nathan BONHOMME 60330 - 4E (1)-1.png" alt="CV de Nathan" class="cv-preview">
+            <div class="cv-actions">
+                <button onclick="showCV('cv-nathan-img')">👀 Voir</button>
+                <a href="BTS CIEL - CV de Nathan BONHOMME 60330 - 4E (1).pdf" download="Nathan_CV.pdf">⬇ Télécharger</a>
+            </div>
+        </div>
+
+        <div class="cv-card">
+            <h3>Imed</h3>
+            <img id="cv-imed-img" src="CV_IMED-1.png" alt="CV de Imed" class="cv-preview">
+            <div class="cv-actions">
+                <button onclick="showCV('cv-imed-img')">👀 Voir</button>
+                <a href="CV_IMED.pdf" download="Imed_CV.pdf">⬇ Télécharger</a>
+            </div>
+        </div>
+
+        <div class="cv-card">
+            <h3>Zakarya</h3>
+            <img id="cv-zakarya-img" src="cid_9E16BB85-8300-4BDB-A0FC-17579CE7712F (1).pdf (1)[1]-1.png" alt="CV de Zakarya" class="cv-preview">
+            <div class="cv-actions">
+                <button onclick="showCV('cv-zakarya-img')">👀 Voir</button>
+                <a href="cid_9E16BB85-8300-4BDB-A0FC-17579CE7712F (1).pdf (1)[1].pdf" download="Zakarya_CV.pdf">⬇ Télécharger</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cv-viewer" class="cv-viewer">
+        <span class="close-btn" onclick="closeCV()">✖</span>
+        <img id="cv-display" src="" alt="CV">
+    </div>
+</main>
+
+
+<script defer src="script.js"></script>
+</body>
+</html>
